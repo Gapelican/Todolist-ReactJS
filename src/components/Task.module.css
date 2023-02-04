@@ -1,0 +1,58 @@
+.task {
+    background: var(--gray-500);
+    border-radius: 8px;
+    padding: 1rem;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 0.75rem;
+}
+
+.contentCheckBox {
+    flex:none;
+    overflow: hidden;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background: var(--gray-500);
+    border: 2px solid var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+    
+
+
+.task input {
+    opacity: 0;
+    accent-color: var(--purple);
+    position: relative;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;    
+}
+
+.task input:checked {
+    opacity: 1;
+}
+
+
+.task p {
+    font-size: 0.875rem;
+    color: var(--gray-100);
+}
+
+.task .textDecoration {
+    text-decoration: line-through;
+}
+
+.clearTask {
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.clearTask:hover {
+    color: rgb(221, 17, 17);
+}
