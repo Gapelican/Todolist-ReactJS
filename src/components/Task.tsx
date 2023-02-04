@@ -26,6 +26,7 @@ export function Task({ task, onDeleteTask } : TaskProps) {
 
     function handleTask() {
         onDeleteTask(task);
+        
     }
 
     
