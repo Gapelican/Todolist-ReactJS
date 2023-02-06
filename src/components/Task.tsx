@@ -3,43 +3,32 @@ import styles from "./Task.module.css";
 import { useState } from "react";
 
 interface TaskProps {
-    task: string;
+    id: string;
+    title: string;
+    isComplete: boolean
     onDeleteTask: (deleteTotask: string) => void;
+    onCompleteTask: (check: string) => void;
 }
 
 //text-decoration: line-through;
 
-export function Task({ task, onDeleteTask } : TaskProps) {
-    const [checked, setChecked] = useState(false)
+export function Task({ id, title, isComplete, onDeleteTask, onCompleteTask } : TaskProps) {
 
-    const [countCheck, setCountCheck] = useState(0)
-
-    
 
     function handleChange() {
-        setChecked(!checked);
-
-        if (checked) {
-            setCountCheck(countCheck+1)
-        }
+        onCompleteTask(id)
     }
 
     function handleTask() {
-        onDeleteTask(task);
-        
+        onDeleteTask(id);
     }
-
-    
-    
-    console.log(countCheck);
-    
 
     return (
         <div className={styles.task}>
             <div className={styles.contentCheckBox}>
-                <input checked={checked} onChange={handleChange} type="checkbox" />
+                <input checked={isComplete} onChange={handleChange} type="checkbox" />
             </div>
-            <p className={checked ? styles.textDecoration : ""}>{task}</p>
+            <p className={isComplete ? styles.textDecoration : ""}>{title}</p>
             <div onClick={handleTask} className={styles.clearTask}>
                 <Trash size={20}/>
             </div>

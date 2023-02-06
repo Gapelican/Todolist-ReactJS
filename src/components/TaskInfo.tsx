@@ -2,11 +2,12 @@ import styles from './TaskInfo.module.css'
 
 interface TaskProps {
     totalTask: number;
+    totalTasksComplete: number;
 }
 
-export function TaskInfo({ totalTask } : TaskProps) {
+export function TaskInfo({ totalTask, totalTasksComplete } : TaskProps) {
 
-    const taskDone = 3
+    const taskDone = totalTasksComplete
 
     return (
         <div className={styles.content}>
